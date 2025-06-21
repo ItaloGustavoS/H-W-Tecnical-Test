@@ -76,6 +76,16 @@ body {
 .offer-card h4 {
   font-weight: 900;
 }
+.offer-card img {
+  max-height: 200px; /* Default max height for offer images */
+  object-fit: contain; /* Ensures the image scales nicely within the bounds */
+  margin-bottom: 1rem; /* Adds some space below the image */
+}
+
+/* Specific adjustment for the highlight card image if needed, e.g. if it scales differently */
+.offer-card.highlight img {
+  max-height: 220px; /* Slightly larger for the highlighted card */
+}
 .price-old {
   text-decoration: line-through;
   color: #6c757d;

@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Default plan if the planKey is not found or is invalid
     default: {
         price: "N/A",
-        quantity: "Plano não especificado",
+        quantity: "Unspecified Plan",
         productImage: "Assets do Produto/Bottle-Mockup.png", // Generic placeholder
-        bonusName: "Bônus Padrão",
+        bonusName: "Standard Bonus",
         bonusImage: "Assets do Produto/favicon.ico", // Generic placeholder
     }
   };
@@ -71,31 +71,42 @@ document.addEventListener("DOMContentLoaded", function () {
   function updatePageContent(customerData, planDetails) {
     // Update customer-specific information
     if (customerData && customerData.name && thankYouTitleElement) {
-      thankYouTitleElement.textContent = `Obrigado ${customerData.name} & Parabéns!`;
+      thankYouTitleElement.textContent = `Thank You ${customerData.name} & Congratulations!`;
     } else if (thankYouTitleElement) {
-      thankYouTitleElement.textContent = `Obrigado & Parabéns!`; // Default if name is not available
+      // Fallback if name is not in customerData, but the static HTML already has a good default.
+      // This JS part primarily handles adding the name.
+      // thankYouTitleElement.textContent = `Thank You & Congratulations!`;
     }
 
     if (customerData && customerData.email && customerEmailElement) {
       customerEmailElement.textContent = customerData.email;
     } else if (customerEmailElement) {
-      customerEmailElement.textContent = "[Email não fornecido]";
+      customerEmailElement.textContent = "[Email not provided]";
     }
 
     // Update plan-specific information
+    // The quantity string might include "potes", ensure it's "bottles"
+    const quantityText = planDetails.quantity.toLowerCase().includes("potes")
+                         ? planDetails.quantity.replace(/potes/i, "bottles")
+                         : planDetails.quantity;
+    const productImageAltText = `Image of ${quantityText}`;
+    const bonusImageAltText = `Image of ebook ${planDetails.bonusName}`;
+    const bonusDisplayText = `With your purchase of <strong>${quantityText}</strong>, you will receive the ebook <strong>${planDetails.bonusName}</strong>, ENJOY!`;
+
+
     if (productImageElement) {
       productImageElement.src = planDetails.productImage;
-      productImageElement.alt = `Imagem de ${planDetails.quantity}`;
+      productImageElement.alt = productImageAltText;
     }
     if (productDetailsElement) {
-      productDetailsElement.textContent = `${planDetails.price} | ${planDetails.quantity}`;
+      productDetailsElement.textContent = `${planDetails.price} | ${quantityText}`;
     }
     if (bonusImageElement) {
       bonusImageElement.src = planDetails.bonusImage;
-      bonusImageElement.alt = `Imagem do ebook ${planDetails.bonusName}`;
+      bonusImageElement.alt = bonusImageAltText;
     }
     if (bonusTextElement) {
-      bonusTextElement.innerHTML = `Pela sua compra de <strong>${planDetails.quantity}</strong>, você receberá o ebook <strong>${planDetails.bonusName}</strong>, APROVEITE!`;
+      bonusTextElement.innerHTML = bonusDisplayText;
     }
   }
 
