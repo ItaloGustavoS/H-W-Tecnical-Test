@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de Vendas - [Nome do Produto]</title>
+    <title>Sales Page - [Product Name]</title>
+    <link rel="icon" href="Assets do Produto/favicon.ico" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -19,152 +20,22 @@
       rel="stylesheet"
     />
     <!-- Custom CSS -->
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #f8f9fa;
-      }
-      .product-name {
-        font-weight: 700;
-      }
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-        background: #000;
-        margin: 0 auto;
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .hidden-content {
-        display: none;
-      }
-      .countdown-timer {
-        background-color: #dc3545;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-      .countdown-timer h3 {
-        font-weight: 900;
-        margin-bottom: 0.5rem;
-      }
-      .countdown-timer .timer {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-      .offers-section {
-        padding: 4rem 0;
-      }
-      .offer-card {
-        border: 2px solid #dee2e6;
-        border-radius: 15px;
-        padding: 2rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .offer-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      .offer-card.highlight {
-        border-color: #ffc107;
-        background-color: #fffbeb;
-        transform: scale(1.05);
-        z-index: 10;
-      }
-      .offer-card .popular-badge {
-        background-color: #ffc107;
-        color: #212529;
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-weight: 700;
-        position: absolute;
-        top: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .offer-card h4 {
-        font-weight: 900;
-      }
-      .price-old {
-        text-decoration: line-through;
-        color: #6c757d;
-      }
-      .price-new {
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: #28a745;
-      }
-      .btn-buy {
-        background-color: #28a745;
-        color: white;
-        font-weight: 700;
-        padding: 1rem;
-        width: 100%;
-        border-radius: 10px;
-        transition: background-color 0.3s;
-      }
-      .btn-buy:hover {
-        background-color: #218838;
-        color: white;
-      }
-      .guarantee-section {
-        background-color: #e9ecef;
-        padding: 4rem 0;
-        text-align: center;
-      }
-      .guarantee-section img {
-        max-width: 150px;
-      }
-      .faq-section {
-        padding: 4rem 0;
-      }
-      .references-section,
-      .footer-section {
-        background-color: #343a40;
-        color: #adb5bd;
-        padding: 3rem 0;
-      }
-      .footer-section a {
-        color: #dee2e6;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-      .footer-section a:hover {
-        color: white;
-      }
-      .modal-header,
-      .modal-footer {
-        border: none;
-      }
-    </style>
+    <link rel="stylesheet" href="css/vsl-style.css" />
   </head>
   <body>
-    <!-- Seção do Vídeo -->
+    <!-- Video Section -->
     <section class="video-section py-4 bg-dark">
       <div class="container">
         <div class="video-container shadow-lg">
-          <!-- O vídeo será carregado aqui pelo script do YouTube -->
+          <!-- The video will be loaded here by the YouTube script -->
           <div id="player"></div>
         </div>
       </div>
     </section>
 
-    <!-- Conteúdo que aparece DEPOIS do tempo do vídeo -->
+    <!-- Content that appears AFTER the video timer -->
     <div id="after-video-content" class="hidden-content">
-      <!-- Contador 1 -->
+      <!-- Countdown Timer 1 -->
       <section class="countdown-timer">
         <div class="container">
           <h3>
@@ -175,15 +46,16 @@
         </div>
       </section>
 
-      <!-- Seção de Ofertas 1 -->
+      <!-- Offers Section 1 -->
       <section class="offers-section bg-light">
         <div class="container">
           <div class="row d-flex align-items-stretch justify-content-center">
-            <!-- Oferta 2 Potes (Mobile: 3) -->
+            <!-- Offer 2 Bottles (Mobile: 3) -->
             <div class="col-lg-4 col-md-6 mb-4 order-md-3 order-lg-1">
               <div class="offer-card">
                 <div>
-                  <h4>2 POTES</h4>
+                  <img src="Assets do Produto/img-2-bottles.webp" alt="2 Bottles" class="img-fluid">
+                  <h4>2 BOTTLES</h4>
                   <p class="lead">60 Days Supply</p>
                   <p class="text-muted">60 Days Guarantee</p>
                   <hr />
@@ -199,16 +71,17 @@
                   data-bs-target="#purchaseModal"
                   data-plan="2-potes"
                 >
-                  COMPRAR AGORA
+                  BUY NOW
                 </button>
               </div>
             </div>
-            <!-- Oferta 6 Potes (Destaque - Mobile: 1) -->
+            <!-- Offer 6 Bottles (Highlight - Mobile: 1) -->
             <div class="col-lg-4 col-md-6 mb-4 order-md-1 order-lg-2">
               <div class="offer-card highlight position-relative">
-                <div class="popular-badge">MAIS POPULAR</div>
+                <div class="popular-badge">MOST POPULAR</div>
                 <div>
-                  <h4>6 POTES</h4>
+                  <img src="Assets do Produto/img-6-bottles.webp" alt="6 Bottles" class="img-fluid">
+                  <h4>6 BOTTLES</h4>
                   <p class="lead">180 Days Supply</p>
                   <p class="text-muted">60 Days Guarantee</p>
                   <hr />
@@ -224,15 +97,16 @@
                   data-bs-target="#purchaseModal"
                   data-plan="6-potes"
                 >
-                  COMPRAR AGORA
+                  BUY NOW
                 </button>
               </div>
             </div>
-            <!-- Oferta 3 Potes (Mobile: 2) -->
+            <!-- Offer 3 Bottles (Mobile: 2) -->
             <div class="col-lg-4 col-md-6 mb-4 order-md-2 order-lg-3">
               <div class="offer-card">
                 <div>
-                  <h4>3 POTES</h4>
+                  <img src="Assets do Produto/img-3-bottles.webp" alt="3 Bottles" class="img-fluid">
+                  <h4>3 BOTTLES</h4>
                   <p class="lead">90 Days Supply</p>
                   <p class="text-muted">60 Days Guarantee</p>
                   <hr />
@@ -248,7 +122,7 @@
                   data-bs-target="#purchaseModal"
                   data-plan="3-potes"
                 >
-                  COMPRAR AGORA
+                  BUY NOW
                 </button>
               </div>
             </div>
@@ -256,14 +130,14 @@
         </div>
       </section>
 
-      <!-- Seção de Garantia -->
+      <!-- Guarantee Section -->
       <section class="guarantee-section">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-4">
               <img
-                src="https://placehold.co/300x300/E9ECEF/343A40?text=Selo+de+Garantia"
-                alt="Selo de Garantia 180 Dias"
+                src="https://placehold.co/300x300/E9ECEF/343A40?text=Guarantee+Seal"
+                alt="180 Days Guarantee Seal"
                 class="img-fluid rounded-circle"
               />
             </div>
@@ -286,22 +160,22 @@
               <div class="mt-4">
                 <img
                   src="https://placehold.co/80x80/ffffff/333333?text=NO+GMO"
-                  alt="Selo NO GMO"
+                  alt="NO GMO Seal"
                   class="me-2"
                 />
                 <img
                   src="https://placehold.co/80x80/ffffff/333333?text=GMP"
-                  alt="Selo GMP"
+                  alt="GMP Seal"
                   class="me-2"
                 />
                 <img
                   src="https://placehold.co/80x80/ffffff/333333?text=100%25+NATURAL"
-                  alt="Selo 100% Natural"
+                  alt="100% Natural Seal"
                   class="me-2"
                 />
                 <img
                   src="https://placehold.co/80x80/ffffff/333333?text=FDA"
-                  alt="Selo FDA"
+                  alt="FDA Registered Seal"
                 />
               </div>
             </div>
@@ -309,7 +183,7 @@
         </div>
       </section>
 
-      <!-- Contador 2 -->
+      <!-- Countdown Timer 2 -->
       <section class="countdown-timer">
         <div class="container">
           <h3>
@@ -320,17 +194,17 @@
         </div>
       </section>
 
-      <!-- Seção de Ofertas 2 -->
+      <!-- Offers Section 2 -->
       <section class="offers-section bg-light" id="offers2">
-        <!-- O conteúdo é idêntico à seção de ofertas 1 e será clonado via JS -->
+        <!-- Content is identical to offers section 1 and will be cloned via JS -->
       </section>
 
-      <!-- Seção de FAQ -->
+      <!-- FAQ Section -->
       <section class="faq-section">
         <div class="container">
-          <h2 class="text-center fw-bold mb-5">Perguntas Frequentes (FAQ)</h2>
+          <h2 class="text-center fw-bold mb-5">Frequently Asked Questions (FAQ)</h2>
           <div class="accordion" id="faqAccordion">
-            <!-- Pergunta 1 -->
+            <!-- Question 1 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button
@@ -360,7 +234,7 @@
                 </div>
               </div>
             </div>
-            <!-- Pergunta 2 -->
+            <!-- Question 2 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button
@@ -389,7 +263,7 @@
                 </div>
               </div>
             </div>
-            <!-- Adicione as outras perguntas aqui seguindo o mesmo padrão -->
+            <!-- Add other questions here following the same pattern -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button
@@ -506,7 +380,7 @@
         </div>
       </section>
 
-      <!-- Contador 3 -->
+      <!-- Countdown Timer 3 -->
       <section class="countdown-timer">
         <div class="container">
           <h3>
@@ -517,16 +391,16 @@
         </div>
       </section>
 
-      <!-- Seção de Ofertas 3 -->
+      <!-- Offers Section 3 -->
       <section class="offers-section bg-light" id="offers3">
-        <!-- O conteúdo é idêntico à seção de ofertas 1 e será clonado via JS -->
+        <!-- Content is identical to offers section 1 and will be cloned via JS -->
       </section>
     </div>
 
-    <!-- Seção de Referências (aparece ANTES do tempo do vídeo) -->
+    <!-- References Section (appears BEFORE video timer) -->
     <section id="references-before-video" class="references-section">
       <div class="container">
-        <h2 class="text-white text-center mb-4">Referências Científicas</h2>
+        <h2 class="text-white text-center mb-4">Scientific References</h2>
         <div class="row">
           <div class="col-md-6">
             <ol>
@@ -624,7 +498,7 @@
       </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="footer-section text-center">
       <div class="container">
         <div class="py-3">
@@ -674,7 +548,7 @@
       </div>
     </footer>
 
-    <!-- Modal de Compra -->
+    <!-- Purchase Modal -->
     <div
       class="modal fade"
       id="purchaseModal"
@@ -686,7 +560,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="purchaseModalLabel">
-              Finalize sua Compra
+              Complete Your Purchase
             </h5>
             <button
               type="button"
@@ -700,7 +574,7 @@
               <input type="hidden" id="planInput" name="plan" />
               <div class="mb-3">
                 <label for="customerName" class="form-label"
-                  >Nome Completo</label
+                  >Full Name</label
                 >
                 <input
                   type="text"
@@ -720,7 +594,7 @@
               </div>
               <div class="mb-3">
                 <label for="customerPhone" class="form-label"
-                  >Telefone (com DDD)</label
+                  >Phone (with area code)</label
                 >
                 <input
                   type="tel"
@@ -730,7 +604,7 @@
                 />
               </div>
               <button type="submit" class="btn btn-buy w-100">
-                FINALIZAR COMPRA
+                COMPLETE PURCHASE
               </button>
             </form>
           </div>
@@ -744,145 +618,7 @@
       xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-
-    <script>
-      // 1. Carregar a API do Player do YouTube
-      var tag = document.createElement("script");
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName("script")[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 2. Esta função cria um <iframe> (e player de vídeo do YouTube)
-      //    depois que o código da API é baixado.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player("player", {
-          // Video com mais de 30 minutos
-          videoId: "jfKfPfyJRdk", // Ex: Documentário sobre natureza
-          playerVars: {
-            playsinline: 1,
-            autoplay: 1, // Autoplay pode ser bloqueado por navegadores
-            controls: 1,
-          },
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange,
-          },
-        });
-      }
-
-      // 3. A API chamará esta função quando o vídeo estiver pronto.
-      function onPlayerReady(event) {
-        // event.target.playVideo(); // Opcional, se autoplay falhar
-      }
-
-      // 4. Lógica para verificar o tempo do vídeo e mudar o layout
-      let intervalId;
-      const timeToShowContent = 1214; // 20 minutos e 14 segundos
-      let contentShown = false;
-
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !contentShown) {
-          intervalId = setInterval(() => {
-            const currentTime = player.getCurrentTime();
-            if (currentTime >= timeToShowContent) {
-              showHiddenContent();
-              clearInterval(intervalId);
-              contentShown = true;
-            }
-          }, 1000);
-        } else {
-          clearInterval(intervalId);
-        }
-      }
-
-      // Função para mostrar o conteúdo e iniciar os contadores
-      function showHiddenContent() {
-        const initialContent = document.getElementById(
-          "references-before-video"
-        );
-        const hiddenContent = document.getElementById("after-video-content");
-
-        if (initialContent) initialContent.style.display = "none";
-        if (hiddenContent) hiddenContent.style.display = "block";
-
-        // Clonar as seções de oferta
-        const offersSource = document
-          .querySelector(".offers-section .container")
-          .cloneNode(true);
-        document
-          .querySelector("#offers2")
-          .appendChild(offersSource.cloneNode(true));
-        document
-          .querySelector("#offers3")
-          .appendChild(offersSource.cloneNode(true));
-
-        // Re-adicionar listeners aos botões clonados
-        rebindModalButtons();
-
-        // Iniciar os contadores regressivos
-        startCountdown(1200, "timer1"); // 20 minutos
-        startCountdown(1200, "timer2");
-        startCountdown(1200, "timer3");
-      }
-
-      // Função para iniciar um contador regressivo
-      function startCountdown(duration, elementId) {
-        let timer = duration,
-          minutes,
-          seconds;
-        const display = document.getElementById(elementId);
-
-        setInterval(function () {
-          minutes = parseInt(timer / 60, 10);
-          seconds = parseInt(timer % 60, 10);
-
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
-
-          display.textContent = minutes + ":" + seconds;
-
-          if (--timer < 0) {
-            timer = 0; // Para não ficar negativo
-          }
-        }, 1000);
-      }
-
-      // 5. Lógica do Modal e Redirecionamento
-      const purchaseModal = document.getElementById("purchaseModal");
-      const purchaseForm = document.getElementById("purchaseForm");
-      const planInput = document.getElementById("planInput");
-
-      function rebindModalButtons() {
-        document
-          .querySelectorAll('.btn-buy[data-bs-toggle="modal"]')
-          .forEach((button) => {
-            button.addEventListener("click", (event) => {
-              const plan = event.currentTarget.getAttribute("data-plan");
-              if (planInput) {
-                planInput.value = plan;
-              }
-            });
-          });
-      }
-
-      rebindModalButtons(); // Bind inicial
-
-      purchaseForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        // Salvar dados no localStorage
-        const customerData = {
-          name: document.getElementById("customerName").value,
-          email: document.getElementById("customerEmail").value,
-          phone: document.getElementById("customerPhone").value,
-        };
-        localStorage.setItem("customerData", JSON.stringify(customerData));
-
-        // Redirecionar para a página de agradecimento
-        const plan = planInput.value;
-        window.location.href = `obrigado.html?plan=${plan}`;
-      });
-    </script>
+    <!-- Custom JS -->
+    <script src="js/vsl-script.js"></script>
   </body>
 </html>

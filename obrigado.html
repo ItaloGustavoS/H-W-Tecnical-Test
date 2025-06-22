@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Obrigado pela sua Compra!</title>
+    <title>Thank You For Your Purchase!</title>
+    <link rel="icon" href="Assets do Produto/favicon.ico" type="image/x-icon">
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -18,144 +19,102 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #f8f9fa;
-      }
-      .product-name {
-        font-weight: 700;
-      }
-      .thank-you-header {
-        background-color: #28a745;
-        color: white;
-        padding: 4rem 0;
-        text-align: center;
-      }
-      .thank-you-header h1 {
-        font-weight: 900;
-      }
-      .content-section {
-        padding: 4rem 0;
-      }
-      .order-summary-card,
-      .bonus-card,
-      .customer-info-card {
-        background-color: white;
-        border-radius: 15px;
-        padding: 2rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-      }
-      .footer-section {
-        background-color: #343a40;
-        color: #adb5bd;
-        padding: 3rem 0;
-      }
-      .footer-section a {
-        color: #dee2e6;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-      .footer-section a:hover {
-        color: white;
-      }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/obrigado-style.css" />
   </head>
   <body>
     <header class="thank-you-header">
       <div class="container">
-        <h1 id="thankYouTitle">Obrigado & Parabéns!</h1>
-        <p class="lead">Sua compra foi um sucesso!</p>
+        <h1 id="thankYouTitle">Thank You & Congratulations!</h1>
+        <p class="lead">Your purchase was successful!</p>
       </div>
     </header>
 
     <main class="content-section">
       <div class="container">
         <div class="row g-4">
-          <!-- Coluna Principal -->
+          <!-- Main Column -->
           <div class="col-lg-8">
             <div class="order-summary-card mb-4">
-              <h3 class="fw-bold mb-4">Resumo do seu Pedido</h3>
+              <h3 class="fw-bold mb-4">Your Order Summary</h3>
               <div class="row align-items-center">
                 <div class="col-md-4">
                   <img
                     id="productImage"
                     src="https://placehold.co/400x400/CCCCCC/FFFFFF?text=Produto"
                     class="img-fluid rounded"
-                    alt="Imagem do Produto"
+                    alt="Product Image"
                   />
                 </div>
                 <div class="col-md-8">
                   <h4 class="product-name">KetoBoost</h4>
                   <p id="productDetails" class="lead">
-                    [Preço Total] | [Quantidade de potes]
+                    [Total Price] | [Number of bottles]
                   </p>
                   <p>
-                    Sua compra foi bem-sucedida e estamos felizes em tê-lo como
-                    cliente <span class="product-name">KetoBoost</span>!
+                    Your purchase was successful, and we are happy to have you
+                    as a <span class="product-name">KetoBoost</span> customer!
                   </p>
                   <p>
-                    A cobrança aparecerá na fatura do seu cartão de crédito como
-                    "H&W", o revendedor oficial dos produtos neste site.
+                    The charge will appear on your credit card statement as
+                    "H&W", the official retailer of products on this site.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="bonus-card mb-4">
-              <h3 class="fw-bold mb-3">Seu Bônus Gratuito!</h3>
+              <h3 class="fw-bold mb-3">Your Free Bonus!</h3>
               <div class="row align-items-center">
                 <div class="col-md-4">
                   <img
                     id="bonusImage"
                     src="https://placehold.co/400x400/CCCCCC/FFFFFF?text=Ebook"
                     class="img-fluid rounded"
-                    alt="Imagem do Bônus"
+                    alt="Bonus Image"
                   />
                 </div>
                 <div class="col-md-8">
                   <p id="bonusText">
-                    Pela sua compra, você receberá o ebook [Nome do Ebook],
-                    APROVEITE!
+                    With your purchase, you will receive the [Ebook Name] ebook,
+                    ENJOY!
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Coluna Lateral -->
+          <!-- Sidebar Column -->
           <div class="col-lg-4">
             <div class="customer-info-card">
-              <h3 class="fw-bold mb-4">Informações do Envio</h3>
+              <h3 class="fw-bold mb-4">Shipping Information</h3>
               <p>
-                Nosso objetivo é processar e enviar todos os pedidos em até 48
-                horas. Você receberá um e-mail de confirmação de envio de H&W
-                para
-                <strong id="customerEmail">[Email do Cliente]</strong> assim que
-                seu pedido estiver a caminho.
+                Our goal is to process and ship all orders within 48
+                hours. You will receive a shipping confirmation email from H&W
+                at <strong id="customerEmail">[Customer Email]</strong> once
+                your order is on its way.
               </p>
               <hr />
-              <h5>Prazos de Entrega</h5>
+              <h5>Delivery Times</h5>
               <ul>
                 <li>
-                  <strong>Envio nos EUA:</strong> Por favor, aguarde de 3 a 5
-                  dias úteis para a entrega.
+                  <strong>US Shipping:</strong> Please allow 3-5
+                  business days for delivery.
                 </li>
                 <li>
-                  <strong>Envio Internacional:</strong> Aguarde de 7 a 14 dias
-                  úteis para a entrega.
+                  <strong>International Shipping:</strong> Please allow 7-14
+                  business days for delivery.
                 </li>
               </ul>
               <hr />
               <p>
-                Se tiver alguma dúvida ou precisar de ajuda com seu pedido,
-                entre em contato conosco em:
+                If you have any questions or need help with your order,
+                please contact us at:
               </p>
               <p><strong>Email:</strong> support@fitnatty.com</p>
               <div class="alert alert-info mt-3" role="alert">
-                <strong>Dica:</strong> Para garantir que você receba todas as
-                atualizações sobre seu pedido, adicione nosso e-mail à sua lista
-                de contatos!
+                <strong>Tip:</strong> To ensure you receive all
+                updates about your order, please add our email to your contacts list!
               </div>
             </div>
           </div>
@@ -163,7 +122,7 @@
       </div>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="footer-section text-center">
       <div class="container">
         <div class="py-3">
@@ -184,74 +143,7 @@
       </div>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Dados dos planos e bônus
-        const plans = {
-          "6-potes": {
-            price: "$294",
-            quantity: "6 potes",
-            productImage:
-              "https://placehold.co/400x400/ffc107/FFFFFF?text=6+Potes",
-            bonusName: "Guia Completo de Jejum Intermitente",
-            bonusImage:
-              "https://placehold.co/400x400/4CAF50/FFFFFF?text=Bônus+1",
-          },
-          "3-potes": {
-            price: "$207",
-            quantity: "3 potes",
-            productImage:
-              "https://placehold.co/400x400/2196F3/FFFFFF?text=3+Potes",
-            bonusName: "Receitas Keto Deliciosas",
-            bonusImage:
-              "https://placehold.co/400x400/FF9800/FFFFFF?text=Bônus+2",
-          },
-          "2-potes": {
-            price: "$158",
-            quantity: "2 potes",
-            productImage:
-              "https://placehold.co/400x400/f44336/FFFFFF?text=2+Potes",
-            bonusName: "Desafio de 30 Dias para Perda de Peso",
-            bonusImage:
-              "https://placehold.co/400x400/9C27B0/FFFFFF?text=Bônus+3",
-          },
-        };
-
-        // Pega os dados da URL e do localStorage
-        const urlParams = new URLSearchParams(window.location.search);
-        const planKey = urlParams.get("plan") || "6-potes"; // Padrão para 6 potes se nada for passado
-        const selectedPlan = plans[planKey];
-
-        const customerData = JSON.parse(localStorage.getItem("customerData"));
-
-        // Atualiza os elementos da página
-        if (customerData) {
-          document.getElementById(
-            "thankYouTitle"
-          ).textContent = `Thank You ${customerData.name} & Congratulations!`;
-          document.getElementById("customerEmail").textContent =
-            customerData.email;
-        }
-
-        if (selectedPlan) {
-          document.getElementById("productImage").src =
-            selectedPlan.productImage;
-          document.getElementById(
-            "productImage"
-          ).alt = `Imagem de ${selectedPlan.quantity}`;
-          document.getElementById(
-            "productDetails"
-          ).textContent = `${selectedPlan.price} | ${selectedPlan.quantity}`;
-
-          document.getElementById("bonusImage").src = selectedPlan.bonusImage;
-          document.getElementById(
-            "bonusImage"
-          ).alt = `Imagem do ebook ${selectedPlan.bonusName}`;
-          document.getElementById(
-            "bonusText"
-          ).innerHTML = `For your purchase of <strong>${selectedPlan.quantity}</strong>, you'll receive the ebook <strong>${selectedPlan.bonusName}</strong>, ENJOY!`;
-        }
-      });
-    </script>
+    <!-- Custom JS -->
+    <script src="js/obrigado-script.js"></script>
   </body>
 </html>
