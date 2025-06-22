@@ -8,7 +8,7 @@ var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
-const VIDEO_ID = "jfKfPfyJRdk"; // Example: Nature Documentary
+const VIDEO_ID = "jfKfPfyJRdk"; // Example: Lo-Fi Girl
 const TIME_TO_SHOW_CONTENT_SEC = 1214; // 20 minutes and 14 seconds
 
 /**
@@ -74,10 +74,13 @@ function showHiddenContent() {
   const initialContentElement = document.getElementById(
     "references-before-video"
   );
-  const afterVideoContentElement = document.getElementById("after-video-content");
+  const afterVideoContentElement = document.getElementById(
+    "after-video-content"
+  );
 
   if (initialContentElement) initialContentElement.style.display = "none";
-  if (afterVideoContentElement) afterVideoContentElement.style.display = "block";
+  if (afterVideoContentElement)
+    afterVideoContentElement.style.display = "block";
 
   cloneOfferSections();
   rebindModalButtons(); // Ensure event listeners are attached to newly cloned buttons
@@ -108,14 +111,14 @@ function cloneOfferSections() {
   const offersTarget3 = document.querySelector("#offers3");
 
   if (offersTarget2) {
-    offersTarget2.innerHTML = ''; // Clear existing content if any
+    offersTarget2.innerHTML = ""; // Clear existing content if any
     offersTarget2.appendChild(offersSource.cloneNode(true));
   } else {
     console.error("Target offer section #offers2 not found.");
   }
 
   if (offersTarget3) {
-    offersTarget3.innerHTML = ''; // Clear existing content if any
+    offersTarget3.innerHTML = ""; // Clear existing content if any
     offersTarget3.appendChild(offersSource.cloneNode(true));
   } else {
     console.error("Target offer section #offers3 not found.");
@@ -138,7 +141,9 @@ function startCountdown(duration, elementId) {
   const displayElement = document.getElementById(elementId);
 
   if (!displayElement) {
-    console.error(`Countdown display element with ID "${elementId}" not found.`);
+    console.error(
+      `Countdown display element with ID "${elementId}" not found.`
+    );
     return;
   }
 
@@ -231,7 +236,7 @@ function handlePurchaseFormSubmit(event) {
 // Initial binding of modal buttons on page load.
 // Note: `onYouTubeIframeAPIReady` is globally scoped and called by the YouTube API.
 // Other initializations that depend on the DOM being fully loaded can go here.
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   rebindModalButtons();
 
   if (purchaseFormElement) {
