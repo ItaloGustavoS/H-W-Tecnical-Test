@@ -4,32 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
     "6-potes": {
       price: "$294",
       quantity: "6 potes",
-      productImage: "Assets do Produto/img-6-bottles.webp", // Placeholder, update with actual path if available
-      bonusName: "Guia Completo de Jejum Intermitente",
-      bonusImage: "Assets do Produto/bonus1.webp", // Placeholder, update with actual path
+      productImage: "Assets do Produto/img-6-bottles.webp",
+      bonusName: "Firm & Fit Guide - Transform Your Apperance and Texture",
+      bonusImage: "Assets do Produto/bonus1.webp",
     },
     "3-potes": {
       price: "$207",
       quantity: "3 potes",
-      productImage: "Assets do Produto/img-3-bottles.webp", // Placeholder, update with actual path
-      bonusName: "Receitas Keto Deliciosas",
-      bonusImage: "Assets do Produto/bonus2.webp", // Placeholder, update with actual path
+      productImage: "Assets do Produto/img-3-bottles.webp",
+      bonusName: "Cravings Crusher - Meal Plan & Recipes Book",
+      bonusImage: "Assets do Produto/bonus2.webp",
     },
     "2-potes": {
       price: "$158",
       quantity: "2 potes",
-      productImage: "Assets do Produto/img-2-bottles.webp", // Placeholder, update with actual path
-      bonusName: "Desafio de 30 Dias para Perda de Peso",
-      bonusImage: "Assets do Produto/bonus3.webp", // Placeholder, update with actual path
+      productImage: "Assets do Produto/img-2-bottles.webp",
+      bonusName: "Skin-Firming Blueprint",
+      bonusImage: "Assets do Produto/bonus3.webp",
     },
     // Default plan if the planKey is not found or is invalid
     default: {
-        price: "N/A",
-        quantity: "Unspecified Plan",
-        productImage: "Assets do Produto/Bottle-Mockup.png", // Generic placeholder
-        bonusName: "Standard Bonus",
-        bonusImage: "Assets do Produto/favicon.ico", // Generic placeholder
-    }
+      price: "N/A",
+      quantity: "Unspecified Plan",
+      productImage: "Assets do Produto/Bottle-Mockup.png", // Generic placeholder
+      bonusName: "Standard Bonus",
+      bonusImage: "Assets do Produto/favicon.ico", // Generic placeholder
+    },
   };
 
   // DOM Element selectors
@@ -87,12 +87,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update plan-specific information
     // The quantity string might include "potes", ensure it's "bottles"
     const quantityText = planDetails.quantity.toLowerCase().includes("potes")
-                         ? planDetails.quantity.replace(/potes/i, "bottles")
-                         : planDetails.quantity;
+      ? planDetails.quantity.replace(/potes/i, "bottles")
+      : planDetails.quantity;
     const productImageAltText = `Image of ${quantityText}`;
     const bonusImageAltText = `Image of ebook ${planDetails.bonusName}`;
     const bonusDisplayText = `With your purchase of <strong>${quantityText}</strong>, you will receive the ebook <strong>${planDetails.bonusName}</strong>, ENJOY!`;
-
 
     if (productImageElement) {
       productImageElement.src = planDetails.productImage;
